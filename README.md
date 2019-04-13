@@ -1,6 +1,6 @@
-chaz :smirk_cat: 
+carrera :sparkles: :smile_cat: :sparkles:
 ---
-[![Build Status](https://travis-ci.org/shafeen/basicMEAN.svg?branch=master)](https://travis-ci.org/shafeen/basicMEAN)
+[![Build Status](https://travis-ci.org/shafeen/carrera.svg?branch=master)](https://travis-ci.org/shafeen/carrera)
 
 ##### An opinionated project to use for backend applications with a lightweight ui.
 

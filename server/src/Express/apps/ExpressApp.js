@@ -13,7 +13,7 @@ function __(express, logger, cookieParser, bodyParser, sessionMiddleware,
 
     const ExpressApp = express();
     // view engine setup
-    ExpressApp.set('views', path.join(__dirname, '..', '..', '..', 'client', 'views'));
+    ExpressApp.set('views', path.join(__dirname, '..', '..', '..', '..', 'client', 'views'));
     ExpressApp.set('view engine', 'pug');
 
     // uncomment after placing your favicon in /public
@@ -29,10 +29,10 @@ function __(express, logger, cookieParser, bodyParser, sessionMiddleware,
             next();
         }
     });
-    ExpressApp.use(express.static(path.join(__dirname, '..', '..', '..', 'client', 'ng-client')));
-    ExpressApp.use(express.static(path.join(__dirname, '..', '..', '..', 'client', 'ng-client-secure')));
-    ExpressApp.use(express.static(path.join(__dirname, '..', '..', '..', 'client', 'public')));
-    ExpressApp.use('/settings', express.static(path.join(__dirname, '..', '..', 'resources', 'settings')));
+    ExpressApp.use(express.static(path.join(__dirname, '..', '..', '..', '..', 'client', 'ng-client')));
+    ExpressApp.use(express.static(path.join(__dirname, '..', '..', '..', '..', 'client', 'ng-client-secure')));
+    ExpressApp.use(express.static(path.join(__dirname, '..', '..', '..', '..', 'client', 'public')));
+    ExpressApp.use('/settings', express.static(path.join(__dirname, '..', '..', '..', 'resources', 'settings')));
 
     // setup ExpressApp to use passportjs
     ExpressApp.use(sessionMiddleware);

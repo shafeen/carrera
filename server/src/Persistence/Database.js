@@ -18,7 +18,7 @@ function __(mongoose, logger) {
         constructor() {
             this.persistenceEnabled = (
                 supportedPersistenceTypes.has(PERSISTENCE_TYPE) &&
-                PERSISTENCE_TYPE !== PERSISTENCE_MONGODB
+                PERSISTENCE_TYPE === PERSISTENCE_MONGODB
             );
         }
 

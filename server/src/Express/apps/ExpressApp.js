@@ -4,12 +4,12 @@ module.exports = {
         'require(express)', 'require(morgan)', 'require(cookie-parser)',
         'require(body-parser)', 'sessionMiddleware', 'require(path)',
         'passportPreconfigured', 'require(express-flash)', 'require(serve-favicon)',
-        'GraphQLServer', 'RootRouter'
+        'GraphQLServer', 'IndexRouteController'
     ]
 };
 
 function __(express, logger, cookieParser, bodyParser, sessionMiddleware,
-            path, passport, flash, favicon, GraphQLServer, RootRouter) {
+            path, passport, flash, favicon, GraphQLServer, IndexRouteController) {
 
     const ExpressApp = express();
     // view engine setup
@@ -44,7 +44,7 @@ function __(express, logger, cookieParser, bodyParser, sessionMiddleware,
     GraphQLServer.applyMiddleware({app: ExpressApp});
 
     // entry point for application routes
-    ExpressApp.use('/', RootRouter);
+    ExpressApp.use('/', IndexRouteController);
 
     // catch 404 and forward to error handler
     ExpressApp.use(function(req, res, next) {

@@ -1,14 +1,12 @@
 module.exports = {
     name: 'IndexRouteController', service: __,
     dependencies: [
-        'require(express)', 'RootRouter', 'ApiRouteController', 'AuthenticateRouteController', 'PartialsRouteController', 'Metrics'
+        'require(express)', 'ApiRouteController', 'AuthenticateRouteController', 'PartialsRouteController', 'Metrics'
     ]
 };
 
-function __(express, RootRouter, ApiRouteController, AuthenticateRouteController, PartialsRouteController, Metrics) {
+function __(express, ApiRouteController, AuthenticateRouteController, PartialsRouteController, Metrics) {
     const router = express.Router();
-
-    RootRouter.use('/', router);
 
     const AUTHENTICATE_BASE_URL = '/authenticate';
 

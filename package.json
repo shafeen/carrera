@@ -7,11 +7,11 @@
     "debug": "node ./bin/www",
     "test": "mocha --recursive test/server",
     "prepare-dist": "gulp prep-dist",
-    "start": "gulp build-nominify-ng-client && PERSISTENCE_TYPE=mongodb DEBUG=warn,error nodemon -e pug,html,js ./server/framework/app.js",
-    "start-nogulp": "PERSISTENCE_TYPE=mongodb DEBUG=${DEBUG},warn,error nodemon -e pug,html,js ./server/framework/app.js",
-    "start-nogulp-nodb": "DEBUG=${DEBUG},warn,error nodemon -e pug,html,js ./server/framework/app.js",
+    "start": "gulp build-nominify-ng-client && PERSISTENCE_TYPE=mongodb DEBUG=warn,error nodemon -e pug,html,js ./server/app.js",
+    "start-nogulp": "PERSISTENCE_TYPE=mongodb DEBUG=${DEBUG},warn,error nodemon -e pug,html,js ./server/app.js",
+    "start-nogulp-nodb": "DEBUG=${DEBUG},warn,error nodemon -e pug,html,js ./server/app.js",
     "start-withgulp": "gulp watch-angular | nodemon -e pug,html,js ./server/framework/bin/www",
-    "check-coverage": "nyc --include 'server/library/Repositories/**/*.js' --include 'server/library/Utilities/**/*.js' --include 'server/library/POJO/**/*.js' --include 'server/routes/**/*.js' --all mocha --recursive test/server/ --check-coverage --lines 95 --functions 95"
+    "check-coverage": "nyc --include 'server/src/**/*.js' --all mocha --recursive test/server/ --check-coverage --lines 95 --functions 95"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.14",
@@ -20,6 +20,7 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "bottlejs": "^1.7.2",
+    "chaz-js": "^0.2.5",
     "connect-redis": "^3.3.3",
     "cookie-parser": "~1.4.3",
     "debug": ">=2.6.9",

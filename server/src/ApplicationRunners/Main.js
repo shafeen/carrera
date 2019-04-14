@@ -2,11 +2,11 @@ module.exports = {
     name: "Main", service: __,
     dependencies: [
         'ApplicationRunner', 'logger', 'Database',
-        'expressHttpInitializer', 'resource(settings/settings.json)'
+        'ExpressHttpInitializer', 'resource(settings/settings.json)'
     ]
 };
 
-function __(ApplicationRunner, logger, Database, expressHttpInitializer, settings) {
+function __(ApplicationRunner, logger, Database, ExpressHttpInitializer, settings) {
 
     class Main extends ApplicationRunner {
         order() {return 0;}
@@ -18,7 +18,7 @@ function __(ApplicationRunner, logger, Database, expressHttpInitializer, setting
             Database.initConnection();
 
             // kick off the main express apps
-            expressHttpInitializer.startListening();
+            ExpressHttpInitializer.startListening();
         }
 
     }

@@ -9,8 +9,7 @@ function __(ApplicationRunner, logger, settings) {
         order() {return 0;}
 
         run() {
-            logger.warn(`Starting sample ApplicationRunner class '${this.constructor.name}'`);
-            logger.warn(settings.msg);
+            logger.warn(`Setting up app with ApplicationRunner class '${this.constructor.name}'`);
         }
 
     }

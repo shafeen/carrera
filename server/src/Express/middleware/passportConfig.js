@@ -1,8 +1,10 @@
-module.exports = function (passport) {
+module.exports = {
+    name: 'passportPreconfigured', service: __,
+    dependencies: ['require(passport)', 'require(passport-local)', 'UserRepository']
+};
 
-const LocalStrategy = require('passport-local').Strategy;
-const { UserRepository } = require('bottlejs')('chaz').container;
-
+// configure passportjs for login and signup
+function __(passport, passportLocal, UserRepository) {
     // passport session setup
     // ----------------------
     passport.serializeUser(function (user, done) {
@@ -19,6 +21,7 @@ const { UserRepository } = require('bottlejs')('chaz').container;
     // local-signup strategy
     // ---------------------
     // if the strategies weren't named, they would default to "local"
+    const LocalStrategy = passportLocal.Strategy;
     passport.use('local-signup', new LocalStrategy({
             // local strategy uses username and password by default
             // -> override with email and password
@@ -78,4 +81,5 @@ const { UserRepository } = require('bottlejs')('chaz').container;
         }
     ));
 
-};
+    return passport;
+}
